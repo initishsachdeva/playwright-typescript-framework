@@ -1,0 +1,11 @@
+/.idea/
+/node_modules/
+/allure-results/
+/test-results/
+/playwright-report/
+/**/*.js
+/**/*.js.map
+.gitignore
+*.iml
+
+state.json
