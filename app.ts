@@ -2,7 +2,7 @@ import {chromium} from "@playwright/test";
 
 export let config = {
     role:               "admin",
-    app:                "canva",
+    app:                "fb",
     assessmentAccess:   false,
     browserName :       chromium,
     sleep: {

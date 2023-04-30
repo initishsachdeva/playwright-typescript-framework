@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
     reporter: [['allure-playwright'], ['html', {open: 'never'}], ['line']],
     use: {
         storageState: 'state.json',
-        baseURL: 'https://www.canva.com/',
+        baseURL: 'https://www.facebook.com/',
         actionTimeout: 30000,
         ignoreHTTPSErrors: true,
         video: 'off',
