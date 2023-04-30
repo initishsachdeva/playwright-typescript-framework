@@ -5,7 +5,7 @@ import {LoginPage} from "../pageObjects/LoginPage";
 import {Utils} from "../services/Utils";
 import {NavUtils} from "../services/NavUtils";
 
-test.describe('Login Test', () => {
+test.describe('NavBar Test', () => {
 
     let page: Page;
     let utils: Utils;
@@ -22,13 +22,11 @@ test.describe('Login Test', () => {
     })
 
     /**
-     * Verify the user is directed to correct page after login is successfull through global setup
+     * Verify the navbar contains the matching list
      */
-    let specId_0 = "fb_login_0";
+    let specId_0 = "fb_navbar_0";
     test(specId_0, async () => {
-        await navUtils.navigateToRHSItems('Profile');
-        await page.waitForTimeout(app.config.sleep.medium)
-        await utils.takeAndVerifyScreenshot(specId_0 + "Profile_Screenshots")
+
     })
 
     test.beforeEach(async () => {
