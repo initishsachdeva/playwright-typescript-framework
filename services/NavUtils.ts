@@ -1,4 +1,4 @@
-import {Page} from "@playwright/test";
+import {expect, Page} from "@playwright/test";
 import * as assert from "assert";
 
 export class NavUtils {
@@ -74,16 +74,17 @@ export class NavUtils {
         }
     }
 
-
-    /**
-     * Selects Tab on respective sheet.
-     */
-    async clickBackToHome(tabName: string) {
+    async getHeaderNavBarList(headersName: string[]) {
         try {
-            await this.page.locator('text="Back to Home"').click();
+            const columnHeadersList = await this.page.locator('//*[@class = "xuk3077 x78zum5 x1iyjqo2 xl56j7k x1p8ty84 x1na7pl x88anuq"]').locator('a').allInnerTexts()
+            expect(columnHeadersList.length).toEqual(headersName.length);
+            for (let i = 0; i < columnHeadersList.length; i++) {
+                expect(columnHeadersList[i].trim()).toEqual(headersName[i].trim());
+            }
+
         } catch (e) {
-            console.log("Exception in selecting tab back to home " + e.toString());
-            assert.fail("Unable to switch tab  " + e.toString());
+            console.log("Exception in getting list items :" + e.toString());
+            assert.fail("Exception in getting list items :" + e.toString());
         }
     }
 
