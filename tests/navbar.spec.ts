@@ -26,6 +26,13 @@ test.describe('NavBar Test', () => {
      */
     let specId_0 = "fb_navbar_0";
     test(specId_0, async () => {
+        let optionsToBeValidated = ['Home',
+            'Watch',
+            'Marketplace',
+            'Groups',
+            'Gaming'
+        ];
+        await navUtils.getHeaderNavBarList(optionsToBeValidated);
 
     })
 
